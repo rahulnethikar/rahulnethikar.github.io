@@ -982,7 +982,6 @@
         <div>
           <span class="skill-tag">ITIL Framework</span>
           <span class="skill-tag">IT Service Management</span>
-          <span class="skill-tag">AWS / Azure</span>
           <span class="skill-tag">Cloud Transformation</span>
           <span class="skill-tag">RPA / Process Automation</span>
           <span class="skill-tag">Incident Management</span>
@@ -1152,7 +1151,7 @@
               <li>Oversee end-to-end IT Service Delivery in a <strong>24×7 global shared services</strong> environment,
                 managing <strong>80+ professionals</strong> across Service Desk, Infrastructure, Cloud, Network, Backup,
                 Storage, Wintel, Linux, VDI, and Collaboration tools.</li>
-              <li>Directed cloud migration projects from private to <strong>AWS/Azure</strong>, achieving <strong>20%
+              <li>Directed cloud migration projects from private to <strong>Cloud</strong>, achieving <strong>20%
                   cost optimization</strong>.</li>
               <li>Championed <strong>RPA adoption</strong>, enabling <strong>1,000+ hours</strong> in annual
                 productivity gains and a <strong>15% efficiency increase</strong>.</li>
@@ -1312,7 +1311,7 @@
                     <circle cx="12" cy="12" r="10" />
                     <polyline points="12 6 12 12 16 14" />
                   </svg>
-                  April 2008 – 2011
+                  April 2008 – Nov 2011
                 </span>
               </div>
             </div>
@@ -1321,7 +1320,7 @@
               <li>Contributed to a <strong>Six Sigma Green Belt</strong> project — Time &amp; Motion Study; improved NPS
                 from ~15% to <strong>25–30%</strong>.</li>
               <li>Participated in a <strong>Black Belt Six Sigma</strong> project that improved Service Level from 82%
-                to <strong>92%</strong> by reducing AHT.</li>
+                to <strong>92%</strong> by reducing AHT and OutBound Calling.</li>
               <li>Led War Room exercises and Joint Call Monitoring with Clients, QA &amp; Senior Management; applied
                 SWOT analysis for service improvements.</li>
               <li>Monitored SLA compliance via KPIs: NPS, AHT, QA, and FCR.</li>
@@ -1383,20 +1382,20 @@
         Get In Touch
       </div>
 
-      <form class="contact-form" action="mailto:rahul.nethikar@rediffmail.com" method="get" enctype="text/plain">
+      <form class="contact-form" id="contactForm" novalidate>
         <div class="form-row">
           <div class="form-group">
             <label for="contact-name">Name</label>
-            <input type="text" id="contact-name" name="name" placeholder="Your full name" required />
+            <input type="text" id="contact-name" placeholder="Your full name" required />
           </div>
           <div class="form-group">
             <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" name="email" placeholder="your@email.com" required />
+            <input type="email" id="contact-email" placeholder="your@email.com" required />
           </div>
         </div>
         <div class="form-group form-message">
           <label for="contact-message">Message</label>
-          <textarea id="contact-message" name="body" placeholder="Write your message here…" required></textarea>
+          <textarea id="contact-message" placeholder="Write your message here…" required></textarea>
         </div>
         <button type="submit" class="form-send-btn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -1413,10 +1412,10 @@
 
   <script>
     (function () {
+      // ── Dark mode toggle ──
       var btn = document.getElementById('darkToggleBtn');
       var body = document.body;
 
-      // Restore preference
       if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark');
         btn.setAttribute('aria-pressed', 'true');
@@ -1426,6 +1425,18 @@
         var isDark = body.classList.toggle('dark');
         btn.setAttribute('aria-pressed', String(isDark));
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+
+      // ── Contact form → mailto (no browser security warning) ──
+      document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('contact-name').value.trim();
+        var email = document.getElementById('contact-email').value.trim();
+        var message = document.getElementById('contact-message').value.trim();
+        if (!name || !email || !message) return;
+        var subject = encodeURIComponent('Message from ' + name + ' <' + email + '>');
+        var body = encodeURIComponent(message);
+        window.location.href = 'mailto:rahul.nethikar@rediffmail.com?subject=' + subject + '&body=' + body;
       });
     })();
   </script>
