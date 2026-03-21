@@ -41,6 +41,7 @@
       --page-bg-end: #e2eaf3;
       --page-card: #ffffff;
       --sidebar-bg: #f4f7fb;
+      --job-header-end: #e8f2fb;
       /* transition speed */
       --transition: 0.3s;
     }
@@ -68,6 +69,7 @@
       --page-bg-end: #152234;
       --page-card: #162032;
       --sidebar-bg: #1a2639;
+      --job-header-end: #253f63;
     }
 
     html {
@@ -150,7 +152,7 @@
       display: block;
     }
 
-    .header-name-block {}
+
 
     .header-name {
       font-family: 'Playfair Display', serif;
@@ -359,7 +361,7 @@
 
     .comp-pill {
       background: linear-gradient(135deg, var(--navy), var(--navy2));
-      color: var(--white);
+      color: #ffffff;
       font-size: .76rem;
       font-weight: 500;
       padding: 5px 13px;
@@ -407,7 +409,7 @@
     }
 
     .job-header {
-      background: linear-gradient(135deg, var(--light) 0%, #e8f2fb 100%);
+      background: linear-gradient(135deg, var(--light) 0%, var(--job-header-end) 100%);
       border-left: 4px solid var(--accent);
       border-radius: 0 8px 8px 0;
       padding: 12px 16px;
@@ -481,6 +483,19 @@
       margin: 10px 0 6px;
       letter-spacing: .4px;
       text-transform: uppercase;
+    }
+
+    /* Dark Mode Overrides */
+    body.dark .job-title {
+      color: var(--accent);
+    }
+
+    body.dark .sub-role {
+      color: var(--accent2);
+    }
+
+    body.dark .badge {
+      color: var(--text);
     }
 
     /* ── Large Desktop (≥1280px) ── */
@@ -1017,7 +1032,7 @@
         <div class="edu-item">
           <div class="edu-degree">Bachelor of Science<br />in Computer Science</div>
           <div class="edu-school">Annamalai University</div>
-          <span class="edu-year">2002 – 2005</span>
+          <span class="edu-year">July 2002 – May 2005</span>
         </div>
 
         <!-- Languages -->
@@ -1151,7 +1166,8 @@
               <li>Oversee end-to-end IT Service Delivery in a <strong>24×7 global shared services</strong> environment,
                 managing <strong>80+ professionals</strong> across Service Desk, Infrastructure, Cloud, Network, Backup,
                 Storage, Wintel, Linux, VDI, and Collaboration tools.</li>
-              <li>Directed cloud migration projects from private to <strong>Cloud</strong>, achieving <strong>20%
+              <li>Directed cloud migration projects from private to <strong>various public cloud platforms</strong>,
+                achieving <strong>20%
                   cost optimization</strong>.</li>
               <li>Championed <strong>RPA adoption</strong>, enabling <strong>1,000+ hours</strong> in annual
                 productivity gains and a <strong>15% efficiency increase</strong>.</li>
@@ -1393,6 +1409,10 @@
             <input type="email" id="contact-email" placeholder="your@email.com" required />
           </div>
         </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label for="contact-subject">Subject</label>
+          <input type="text" id="contact-subject" placeholder="Subject of your message" required />
+        </div>
         <div class="form-group form-message">
           <label for="contact-message">Message</label>
           <textarea id="contact-message" placeholder="Write your message here…" required></textarea>
@@ -1432,9 +1452,10 @@
         e.preventDefault();
         var name = document.getElementById('contact-name').value.trim();
         var email = document.getElementById('contact-email').value.trim();
+        var subjectVal = document.getElementById('contact-subject').value.trim();
         var message = document.getElementById('contact-message').value.trim();
-        if (!name || !email || !message) return;
-        var subject = encodeURIComponent('Message from ' + name + ' <' + email + '>');
+        if (!name || !email || !subjectVal || !message) return;
+        var subject = encodeURIComponent(subjectVal + ' (from ' + name + ')');
         var body = encodeURIComponent(message);
         window.location.href = 'mailto:rahul.nethikar@rediffmail.com?subject=' + subject + '&body=' + body;
       });
