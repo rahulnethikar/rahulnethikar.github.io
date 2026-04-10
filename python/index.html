@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Rahul Nethikar" />
+  <meta name="dcterms.date" content="2026-01-01" />
   <title>Python for IT Operations: Zero to SRE | By Rahul Nethikar</title>
   <style>
     /* Default styles provided by pandoc.
@@ -384,7 +386,7 @@
         }
         .author-signature-styled h2 {
             margin: 0;
-            color: #0f172a;
+            color: var(--text-color);
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 1.8rem;
@@ -798,11 +800,13 @@
       </p>
       
       <h3>Acknowledgements</h3>
-      <p>This work would not have been possible without the unwavering support of my family.</p>
-      <p>To my wife, <strong>Mrs. Vijaylaxmi Nethikar</strong> — thank you for your constant support, wise guidance, steady encouragement, and boundless love. You inspire everything I do.</p>
-      <p><em>To my compass in every storm and my light in every script—this journey into code is built on the foundation of your love.</em></p>
+      <p>Writing this manual has been a long journey, one that often took me away from the people I love. This book truly belongs to those who supported me every step of the way.</p>
       
-      <p>To my beloved parents — thank you for your blessings, which have always been my greatest strength. I dedicate this work to my late mother, <strong>(Late) Mrs. Shobha Nethikar</strong>, and my father, <strong>Mr. Shivaji L. Nethikar</strong>.</p>
+      <p>To my wife, <strong>Mrs. Vijaylaxmi Nethikar</strong> — thank you for being my rock. You took care of everything behind the scenes so I could focus on these pages. Your patience during my endless late nights at the keyboard and your belief in this project kept me going when I was exhausted. This isn't just my work; it's a reflection of the love and space you gave me to create it.</p>
+      
+      <p>To my daughter, <strong>Dhriti</strong> — you are my greatest "Hello World." Watching you turn three while I was finishing this book reminded me of why I work so hard. Your laughter is the best break from any complex code, and I hope one day you look at this and see that you can build anything you imagine. I love you more than words, or code, could ever say.</p>
+
+      <p>To my beloved parents — thank you for the life and the values you gave me. To my father, <strong>Mr. Shivaji L. Nethikar</strong>, for your quiet strength, and to the memory of my mother, <strong>(Late) Mrs. Shobha Nethikar</strong>, whose blessings I feel in every achievement. Everything I am is built on the foundation you laid.</p>
       
       <div class="author-signature-styled">
         <h2 style="font-family:'Playfair Display', serif; margin:0; border:none; padding:0; color: var(--text-color);">Rahul Nethikar</h2>
@@ -865,6 +869,8 @@
 <header id="title-block-header">
 <h1 class="title">Python for IT Operations: Zero to SRE | By Rahul
 Nethikar</h1>
+<p class="author">Rahul Nethikar</p>
+<p class="date">2026</p>
 </header>
 <hr />
 <p><strong>Level:</strong> Zero to Advanced | <strong>Platform:</strong>
@@ -1319,22 +1325,28 @@ to Module</a></td>
 </tbody>
 </table>
 <hr />
-<p><em>Python for IT Operations: Zero to SRE | Author: Rahul Nethikar |
-Website: https://rahulnethikar.github.io/ | Level: Zero to Advanced |
-Platform: Windows | © 2026</em></p>
 <hr />
 <h3 id="acknowledgements">Acknowledgements</h3>
-<p>This work would not have been possible without the unwavering support
-of my family.</p>
+<p>Writing this manual has been a long journey, one that often took me
+away from the people I love. This book truly belongs to those who
+supported me every step of the way.</p>
 <p>To my wife, <strong>Mrs. Vijaylaxmi Nethikar</strong> — thank you for
-your constant support, wise guidance, steady encouragement, and
-boundless love. You inspire everything I do. <em>To my compass in every
-storm and my light in every script—this journey into code is built on
-the foundation of your love.</em></p>
-<p>To my beloved parents — thank you for your blessings, which have
-always been my greatest strength. I dedicate this work to my late
-mother, <strong>(Late) Mrs. Shobha Nethikar</strong>, and my father,
-<strong>Mr. Shivaji L. Nethikar</strong>.</p>
+being my rock. You took care of everything behind the scenes so I could
+focus on these pages. Your patience during my endless late nights at the
+keyboard and your belief in this project kept me going when I was
+exhausted. This isn’t just my work; it’s a reflection of the love and
+space you gave me to create it.</p>
+<p>To my daughter, <strong>Dhriti</strong> — you are my greatest “Hello
+World.” Watching you turn three while I was finishing this book reminded
+me of why I work so hard. Your laughter is the best break from any
+complex code, and I hope one day you look at this and see that you can
+build anything you imagine. I love you more than words, or code, could
+ever say.</p>
+<p>To my beloved parents — thank you for the life and the values you
+gave me. To my father, <strong>Mr. Shivaji L. Nethikar</strong>, for
+your quiet strength, and to the memory of my mother, <strong>(Late)
+Mrs. Shobha Nethikar</strong>, whose blessings I feel in every
+achievement. Everything I am is built on the foundation you laid.</p>
 <hr />
 <h1 id="module-00-environment-setup">Module 00: Environment Setup</h1>
 <h3 id="system-configuration-and-verification"><em>System Configuration
@@ -2322,33 +2334,40 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a h
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="st">&quot;hello&quot;</span>     <span class="co"># Now x holds a string</span></span>
 <span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))  <span class="co"># &lt;class &#39;str&#39;&gt;</span></span>
 <span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">3.14</span>        <span class="co"># Now x holds a float</span></span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>[Variable Reassignment — Visualizing memory pointers <span class="kw">and</span> value updates](images<span class="op">/</span>variable_reassignment_frames.png)</span>
-<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(x))  <span class="co"># &lt;class &#39;float&#39;&gt;</span></span></code></pre></div>
-<hr />
-<h2 id="technical-project-server-resource-monitor-script">Technical
-Project: Server Resource Monitor Script</h2>
-<div class="sourceCode" id="cb26"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># PROJECT: Server Resource Monitor</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>hostname <span class="op">=</span> <span class="st">&quot;db-server-01&quot;</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>uptime_days <span class="op">=</span> <span class="dv">45</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>cpu_utilization <span class="op">=</span> <span class="fl">12.5</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>is_healthy <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;====== RESOURCE REPORT ======&quot;</span>)</span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Host      :&quot;</span>, hostname)</span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Uptime    :&quot;</span>, uptime_days)</span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;CPU       :&quot;</span>, cpu_utilization)</span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Healthy   :&quot;</span>, is_healthy)</span>
-<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Type Host :&quot;</span>, <span class="bu">type</span>(hostname))</span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Type CPU  :&quot;</span>, <span class="bu">type</span>(cpu_utilization))</span>
-<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;=============================&quot;</span>)</span></code></pre></div>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fl">3.14</span>        <span class="co"># Now x holds a float</span></span></code></pre></div>
+<figure>
+<img src="images/variable_reassignment_frames.png"
+alt="Variable Reassignment — Visualizing memory pointers and value updates" />
+<figcaption aria-hidden="true">Variable Reassignment — Visualizing
+memory pointers and value updates</figcaption>
+</figure>
+<p>print(type(x)) # &lt;class ‘float’&gt;</p>
+<pre><code>
+
+
+***
+
+## Technical Project: Server Resource Monitor Script
+
+```python
+# ============================================
+# PROJECT: Server Resource Monitor
+
+# ============================================
+
+hostname = &quot;db-server-01&quot;
+uptime_days = 45
+cpu_utilization = 12.5
+is_healthy = True
+
+print(&quot;====== RESOURCE REPORT ======&quot;)
+print(&quot;Host      :&quot;, hostname)
+print(&quot;Uptime    :&quot;, uptime_days)
+print(&quot;CPU       :&quot;, cpu_utilization)
+print(&quot;Healthy   :&quot;, is_healthy)
+print(&quot;Type Host :&quot;, type(hostname))
+print(&quot;Type CPU  :&quot;, type(cpu_utilization))
+print(&quot;=============================&quot;)</code></pre>
 <p><strong>Output:</strong></p>
 <pre><code>====== RESOURCE REPORT ======
 Host      : db-server-01
@@ -2535,7 +2554,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a h
 <span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">*</span> b)   <span class="co"># 30  — multiplication</span></span>
 <span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">/</span> b)   <span class="co"># 3.3333333333333335 — true division, always returns float</span></span>
 <span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">//</span> b)  <span class="co"># 3   — floor division, drops the decimal (rounds DOWN)</span></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">%</span> b)   <span class="co"># 1   — remainder after dividing (10 = 3Ã—3 + 1)</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">%</span> b)   <span class="co"># 1   — remainder after dividing (10 = 3×3 + 1)</span></span>
 <span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">**</span> b)  <span class="co"># 1000 — 10 to the power of 3</span></span></code></pre></div>
 <h3 id="syntax-breakdown-printa-b">Syntax Breakdown:
 <code>print(a // b)</code></h3>
@@ -3093,6 +3112,8 @@ checking</strong> — <code>n % 2 == 0</code> means n is even. (2)
 for circular buffers or carousels. (3) <strong>Time
 calculations</strong> — <code>minutes % 60</code> gives remaining
 minutes after extracting hours.”</p>
+<h3 id="q3-what-is-short-circuit-evaluation-">Q3: What is short-circuit
+evaluation-</h3>
 <p><strong>Ideal Answer:</strong> &gt; “Python uses
 <strong>short-circuit evaluation</strong> for <code>and</code> and
 <code>or</code>. For <code>and</code>, if the left side is
@@ -3119,10 +3140,6 @@ Execution of type casting: <code>int()</code>, <code>float()</code>, and
 <code>str()</code> conversions. - Development of a functional data
 transformation script. - Mitigation of <code>ValueError</code>
 exceptions during type conversion.</p>
-<hr />
-<p>The values on either side of an operator are called
-<strong>operands</strong>. Together, an operator + operands form an
-<strong>expression</strong>.</p>
 <hr />
 <h2 id="data-acquisition-workflow">Data Acquisition Workflow</h2>
 <p>Modern automation requires robust data ingestion patterns.
@@ -3196,12 +3213,12 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a h
 <tbody>
 <tr>
 <td><code>int(...)</code></td>
-<td>The conversion function � “Turn whatever is inside into an
+<td>The conversion function — “Turn whatever is inside into an
 integer”</td>
 </tr>
 <tr>
 <td><code>input(...)</code></td>
-<td>The receiving function � “Wait for the user to type something”</td>
+<td>The receiving function — “Wait for the user to type something”</td>
 </tr>
 <tr>
 <td><code>"..."</code></td>
@@ -3233,15 +3250,15 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a h
 most important skill for independence.</p>
 <figure>
 <img src="images/vscode_debugger_guide.png"
-alt="VS Code Debugger Guide � Breakpoints, Variables, and Stepping Control" />
-<figcaption aria-hidden="true">VS Code Debugger Guide � Breakpoints,
+alt="VS Code Debugger Guide — Breakpoints, Variables, and Stepping Control" />
+<figcaption aria-hidden="true">VS Code Debugger Guide — Breakpoints,
 Variables, and Stepping Control</figcaption>
 </figure>
 <hr />
 <h2 id="operational-insight-2">Operational Insight</h2>
 <blockquote>
 <p>“Input and casting are where your scripts first encounter the ‘Real
-World’ � and the real world provides bad data. Never trust user input
+World’ — and the real world provides bad data. Never trust user input
 without verification. We will revisit this in the Error Handling module,
 but for now, always think about what happens if the user types ‘ABC’
 into your port number field.” ***</p>
@@ -3282,25 +3299,13 @@ conversions to Megabytes (MB) and Terabytes (TB). - Print the results as
 float values.</p>
 <hr />
 <h2 id="knowledge-assessment-3">Knowledge Assessment</h2>
-<ul>
-<li><ol type="A">
-<li>str</li>
-</ol></li>
-<li><ol start="2" type="A">
-<li>float</li>
-</ol></li>
-<li><ol start="3" type="A">
-<li>int</li>
-</ol></li>
-<li><ol start="4" type="A">
-<li>input</li>
-</ol></li>
-</ul>
+<p><strong>Q1. What is the default return type of the input()
+function-</strong> - A) str - B) float - C) int - D) input</p>
 <hr />
 <h2 id="technical-evaluation-preparation-1">Technical Evaluation
 Preparation</h2>
 <h3 id="q1-why-does-python-require-explicit-type-casting-for-inputs">Q1:
-“Why does Python require explicit type casting for inputs�</h3>
+“Why does Python require explicit type casting for inputs—</h3>
 <p><strong>Ideal Answer:</strong> &gt; “Python is a strongly typed
 language, meaning it won’t automatically assume a string containing
 numbers should be treated as a number. The <code>input()</code> function
@@ -3310,7 +3315,7 @@ letters, symbols, or numbers). Requiring explicit casting (like
 define exactly how the data should be handled, preventing accidental
 errors like adding a name to a salary.”</p>
 <h3 id="q2-what-is-the-difference-between-str10-and-10">Q2: “What is the
-difference between <code>str(10)</code> and <code>10</code>�</h3>
+difference between <code>str(10)</code> and <code>10</code>—</h3>
 <p><strong>Ideal Answer:</strong> &gt; “<code>10</code> is an integer
 literal, used for mathematical calculations. <code>'10'</code> (the
 result of <code>str(10)</code>) is a string literal, used for text
@@ -3321,7 +3326,7 @@ whether we need to calculate or display.”</p>
 <h3
 id="q3-how-can-you-handle-a-scenario-where-a-user-enters-abc-when-you-expect-a-number">Q3:
 “How can you handle a scenario where a user enters ‘abc’ when you expect
-a number�</h3>
+a number—</h3>
 <p><strong>Ideal Answer:</strong> &gt; “If we use
 <code>int(input())</code> and the user enters text, Python will throw a
 <code>ValueError</code>. To handle this professionally, we use a
@@ -5537,13 +5542,114 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb127-1"><a 
 <span id="cb127-8"><a href="#cb127-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;100F is </span><span class="sc">{</span><span class="bu">round</span>(f_to_c(<span class="dv">100</span>), <span class="dv">2</span>)<span class="sc">}</span><span class="ss">C&quot;</span>)</span></code></pre></div>
 <hr />
 <hr />
+<h1 id="module-14.5-logic-consolidation-project">Module 14.5: Logic
+Consolidation Project</h1>
+<h3 id="architecting-custom-automation-workflows"><em>Architecting
+Custom Automation Workflows</em></h3>
+<p>Module 14.5 of 37</p>
+<hr />
+<h2 id="objectives-14">Objectives</h2>
+<p>Module competency requires: - Integration of Lists, Dictionaries, and
+Sets within a single logical framework. - Implementation of higher-order
+functions and modularized logic blocks. - Development of a complex
+“Real-World” automation utility. - Preparation for Object-Oriented
+Programming (OOP) architectures.</p>
+<hr />
+<h2 id="the-bridge-challenge">The “Bridge” Challenge</h2>
+<p>Before transitioning to Object-Oriented Programming (OOP), it is
+critical to master the orchestration of independent data structures. In
+professional DevOps environments, data often arrives as a series of
+complex lists or dictionaries which must be filtered, transformed, and
+validated using custom functions.</p>
+<h3 id="the-problem-multi-component-health-audit">The Problem:
+Multi-Component Health Audit</h3>
+<p>You have been tasked with building a <strong>System Health
+Dashboard</strong> script. The script must process raw telemetry data
+from multiple servers, filter out irrelevant status codes, and generate
+a unique list of unhealthy nodes.</p>
+<hr />
+<h2 id="data-structure-consolidation-map">Data Structure Consolidation
+Map</h2>
+<figure>
+<img src="images/python-data-types.png"
+alt="Python Data Structure Selection Guide � When to use Lists, Tuples, Dictionaries, and Sets" />
+<figcaption aria-hidden="true">Python Data Structure Selection Guide �
+When to use Lists, Tuples, Dictionaries, and Sets</figcaption>
+</figure>
+<h3 id="the-raw-telemetry-dictionary">1. The Raw Telemetry
+(Dictionary)</h3>
+<p>Each entry in your telemetry source is a dictionary representing a
+server node.</p>
+<h3 id="the-filter-criteria-set">2. The Filter Criteria (Set)</h3>
+<p>Use a Set to maintain a high-performance collection of “Known
+Critical” error codes.</p>
+<h3 id="the-result-set-list">3. The Result Set (List)</h3>
+<p>A list will store the final objects (Filtered Dictionaries) to be
+reported to the dashboard.</p>
+<hr />
+<h2 id="technical-project-automated-node-audit-utility">technical
+Project: Automated Node Audit Utility</h2>
+<p>Develop a script that integrates all concepts from Modules 01-14.</p>
+<div class="sourceCode" id="cb128"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================</span></span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="co"># PROJECT: Automated Node Audit Utility (Logic Consolidation)</span></span>
+<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================</span></span>
+<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Configuration (Set for fast lookups)</span></span>
+<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a>CRITICAL_ERRORS <span class="op">=</span> {<span class="st">&quot;E-101&quot;</span>, <span class="st">&quot;E-404&quot;</span>, <span class="st">&quot;E-500&quot;</span>}</span>
+<span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-8"><a href="#cb128-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Raw Telemetry Data (List of Dictionaries)</span></span>
+<span id="cb128-9"><a href="#cb128-9" aria-hidden="true" tabindex="-1"></a>raw_telemetry <span class="op">=</span> [</span>
+<span id="cb128-10"><a href="#cb128-10" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;node&quot;</span>: <span class="st">&quot;Web-01&quot;</span>, <span class="st">&quot;cpu&quot;</span>: <span class="dv">45</span>, <span class="st">&quot;status&quot;</span>: <span class="st">&quot;E-101&quot;</span>},</span>
+<span id="cb128-11"><a href="#cb128-11" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;node&quot;</span>: <span class="st">&quot;DB-01&quot;</span>,  <span class="st">&quot;cpu&quot;</span>: <span class="dv">88</span>, <span class="st">&quot;status&quot;</span>: <span class="st">&quot;OK&quot;</span>},</span>
+<span id="cb128-12"><a href="#cb128-12" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;node&quot;</span>: <span class="st">&quot;API-01&quot;</span>, <span class="st">&quot;cpu&quot;</span>: <span class="dv">12</span>, <span class="st">&quot;status&quot;</span>: <span class="st">&quot;E-500&quot;</span>},</span>
+<span id="cb128-13"><a href="#cb128-13" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;node&quot;</span>: <span class="st">&quot;Cache-01&quot;</span>, <span class="st">&quot;cpu&quot;</span>: <span class="dv">10</span>, <span class="st">&quot;status&quot;</span>: <span class="st">&quot;E-202&quot;</span>},</span>
+<span id="cb128-14"><a href="#cb128-14" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb128-15"><a href="#cb128-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-16"><a href="#cb128-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> audit_node(node_data):</span>
+<span id="cb128-17"><a href="#cb128-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb128-18"><a href="#cb128-18" aria-hidden="true" tabindex="-1"></a><span class="co">    Evaluates a single node&#39;s data.</span></span>
+<span id="cb128-19"><a href="#cb128-19" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns True if the node is in CRITICAL failure state.</span></span>
+<span id="cb128-20"><a href="#cb128-20" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb128-21"><a href="#cb128-21" aria-hidden="true" tabindex="-1"></a>    status <span class="op">=</span> node_data.get(<span class="st">&quot;status&quot;</span>)</span>
+<span id="cb128-22"><a href="#cb128-22" aria-hidden="true" tabindex="-1"></a>    cpu_load <span class="op">=</span> node_data.get(<span class="st">&quot;cpu&quot;</span>, <span class="dv">0</span>)</span>
+<span id="cb128-23"><a href="#cb128-23" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb128-24"><a href="#cb128-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Logic: Higher than 80% CPU OR has a critical error code</span></span>
+<span id="cb128-25"><a href="#cb128-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> status <span class="kw">in</span> CRITICAL_ERRORS <span class="kw">or</span> cpu_load <span class="op">&gt;</span> <span class="dv">80</span>:</span>
+<span id="cb128-26"><a href="#cb128-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb128-27"><a href="#cb128-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb128-28"><a href="#cb128-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-29"><a href="#cb128-29" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_report(telemetry):</span>
+<span id="cb128-30"><a href="#cb128-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb128-31"><a href="#cb128-31" aria-hidden="true" tabindex="-1"></a><span class="co">    Orchestrates the audit across all nodes.</span></span>
+<span id="cb128-32"><a href="#cb128-32" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb128-33"><a href="#cb128-33" aria-hidden="true" tabindex="-1"></a>    unhealthy_nodes <span class="op">=</span> [node[<span class="st">&quot;node&quot;</span>] <span class="cf">for</span> node <span class="kw">in</span> telemetry <span class="cf">if</span> audit_node(node)]</span>
+<span id="cb128-34"><a href="#cb128-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> unhealthy_nodes</span>
+<span id="cb128-35"><a href="#cb128-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-36"><a href="#cb128-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Main Execution</span></span>
+<span id="cb128-37"><a href="#cb128-37" aria-hidden="true" tabindex="-1"></a>failed_nodes <span class="op">=</span> generate_report(raw_telemetry)</span>
+<span id="cb128-38"><a href="#cb128-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-39"><a href="#cb128-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--- SYSTEM HEALTH REPORT ---&quot;</span>)</span>
+<span id="cb128-40"><a href="#cb128-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Nodes found requiring intervention: </span><span class="sc">{</span>failed_nodes<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<hr />
+<h2 id="operational-insight-3">Operational Insight</h2>
+<blockquote>
+<p>“In the real world, you don’t just write scripts; you architect
+workflows. This project forces you to think about how data flows from a
+raw ‘telemetry’ list into a filtered ‘critical’ set and finally into an
+‘actionable’ report. Mastering this functional orchestration is the
+final step before we move into the structural power of Classes and
+Objects.”</p>
+</blockquote>
+<hr />
+<p><strong>Next: Module 15 � Classes &amp; Objects</strong></p>
 <h1 id="module-14-functions-part-2">Module 14: Functions (Part 2)</h1>
 <h3
 id="variable-scope-resolution-global-state-management-and-functional-mapping"><em>Variable
 Scope Resolution, Global State Management, and Functional
 Mapping</em></h3>
 <hr />
-<h2 id="objectives-14">Objectives</h2>
+<h2 id="objectives-15">Objectives</h2>
 <p>Module competency requires: - Evaluation of variable lifecycle: Local
 vs Global Scope. - Implementation of the <code>global</code> keyword for
 persistent state management. - Utilization of Lambda expressions for
@@ -5569,15 +5675,15 @@ of a module; accessible by any functional block within that module.</li>
 block; these are encapsulated and unavailable to external processes once
 the function execution terminates.</li>
 </ul>
-<div class="sourceCode" id="cb128"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>cluster_id <span class="op">=</span> <span class="st">&quot;PROD-01&quot;</span> <span class="co"># Global Variable (Accessible Module-Wide)</span></span>
-<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> initialize_node():</span>
-<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>    node_ip <span class="op">=</span> <span class="st">&quot;10.0.0.1&quot;</span> <span class="co"># Local Variable (Encapsulated)</span></span>
-<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Initializing node </span><span class="sc">{</span>node_ip<span class="sc">}</span><span class="ss"> in cluster </span><span class="sc">{</span>cluster_id<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a>initialize_node()</span>
-<span id="cb128-8"><a href="#cb128-8" aria-hidden="true" tabindex="-1"></a><span class="co"># print(node_ip) # This raises a NameError as node_ip is not defined in the global namespace.</span></span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>cluster_id <span class="op">=</span> <span class="st">&quot;PROD-01&quot;</span> <span class="co"># Global Variable (Accessible Module-Wide)</span></span>
+<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> initialize_node():</span>
+<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a>    node_ip <span class="op">=</span> <span class="st">&quot;10.0.0.1&quot;</span> <span class="co"># Local Variable (Encapsulated)</span></span>
+<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Initializing node </span><span class="sc">{</span>node_ip<span class="sc">}</span><span class="ss"> in cluster </span><span class="sc">{</span>cluster_id<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a>initialize_node()</span>
+<span id="cb129-8"><a href="#cb129-8" aria-hidden="true" tabindex="-1"></a><span class="co"># print(node_ip) # This raises a NameError as node_ip is not defined in the global namespace.</span></span></code></pre></div>
 <hr />
 <h2 id="namespace-resolution-local-vs-global-scope">Namespace
 Resolution: Local vs Global Scope</h2>
@@ -5587,30 +5693,30 @@ Accessible by everyone.</li>
 <li><strong>Local Variables</strong>: Defined inside a function. Only
 accessible inside that function.</li>
 </ul>
-<div class="sourceCode" id="cb129"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">0</span> <span class="co"># Global</span></span>
-<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_score():</span>
-<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a>    bonus <span class="op">=</span> <span class="dv">10</span> <span class="co"># Local</span></span>
-<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Local Bonus: </span><span class="sc">{</span>bonus<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a>update_score()</span>
-<span id="cb129-8"><a href="#cb129-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Global Score: </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>score <span class="op">=</span> <span class="dv">0</span> <span class="co"># Global</span></span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> update_score():</span>
+<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a>    bonus <span class="op">=</span> <span class="dv">10</span> <span class="co"># Local</span></span>
+<span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Local Bonus: </span><span class="sc">{</span>bonus<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb130-6"><a href="#cb130-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-7"><a href="#cb130-7" aria-hidden="true" tabindex="-1"></a>update_score()</span>
+<span id="cb130-8"><a href="#cb130-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Global Score: </span><span class="sc">{</span>score<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
 <hr />
 <h2 id="the-global-keyword-and-state-modification">The
 <code>global</code> Keyword and State Modification</h2>
 <p>Functional blocks prioritize local namespace resolution. To modify a
 global identifier within a local scope, the <code>global</code> keyword
 must be explicitly invoked.</p>
-<div class="sourceCode" id="cb130"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increment():</span>
-<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> count <span class="co"># Telling Python: &quot;Use the one outside!&quot;</span></span>
-<span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb130-6"><a href="#cb130-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb130-7"><a href="#cb130-7" aria-hidden="true" tabindex="-1"></a>increment()</span>
-<span id="cb130-8"><a href="#cb130-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count) <span class="co"># Output: 1</span></span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> increment():</span>
+<span id="cb131-4"><a href="#cb131-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> count <span class="co"># Telling Python: &quot;Use the one outside!&quot;</span></span>
+<span id="cb131-5"><a href="#cb131-5" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb131-6"><a href="#cb131-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-7"><a href="#cb131-7" aria-hidden="true" tabindex="-1"></a>increment()</span>
+<span id="cb131-8"><a href="#cb131-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(count) <span class="co"># Output: 1</span></span></code></pre></div>
 <blockquote>
 <p>[!WARNING] <strong>Use Sparingly!</strong> Relying too much on
 <code>global</code> makes code hard to debug. It’s usually better to
@@ -5625,15 +5731,15 @@ functional block via <code>def</code> is computationally or
 syntactically excessive.</p>
 <p><strong>Standard Syntax:</strong>
 <code>lambda arguments : expression</code></p>
-<div class="sourceCode" id="cb131"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regular Function</span></span>
-<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
-<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> x</span>
-<span id="cb131-4"><a href="#cb131-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb131-5"><a href="#cb131-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Lambda Equivalent</span></span>
-<span id="cb131-6"><a href="#cb131-6" aria-hidden="true" tabindex="-1"></a>square_lambda <span class="op">=</span> <span class="kw">lambda</span> x : x <span class="op">*</span> x</span>
-<span id="cb131-7"><a href="#cb131-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb131-8"><a href="#cb131-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square_lambda(<span class="dv">5</span>)) <span class="co"># Output: 25</span></span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regular Function</span></span>
+<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> square(x):</span>
+<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">*</span> x</span>
+<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Lambda Equivalent</span></span>
+<span id="cb132-6"><a href="#cb132-6" aria-hidden="true" tabindex="-1"></a>square_lambda <span class="op">=</span> <span class="kw">lambda</span> x : x <span class="op">*</span> x</span>
+<span id="cb132-7"><a href="#cb132-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb132-8"><a href="#cb132-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(square_lambda(<span class="dv">5</span>)) <span class="co"># Output: 25</span></span></code></pre></div>
 <hr />
 <h2 id="functional-programming-tools-map-and-filter">Functional
 Programming Tools: Map and Filter</h2>
@@ -5641,44 +5747,44 @@ Programming Tools: Map and Filter</h2>
 <code>map()</code> and <code>filter()</code>.</p>
 <h3 id="map-transform-everything">1. <code>map()</code> (Transform
 everything)</h3>
-<div class="sourceCode" id="cb132"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a>doubled <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span>, nums))</span>
-<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(doubled) <span class="co"># [2, 4, 6, 8]</span></span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>nums <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a>doubled <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x <span class="op">*</span> <span class="dv">2</span>, nums))</span>
+<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(doubled) <span class="co"># [2, 4, 6, 8]</span></span></code></pre></div>
 <h3 id="filter-keep-only-what-you-want">2. <code>filter()</code> (Keep
 only what you want)</h3>
-<div class="sourceCode" id="cb133"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> [<span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">18</span>, <span class="dv">12</span>, <span class="dv">30</span>]</span>
-<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a>adults <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> a: a <span class="op">&gt;=</span> <span class="dv">18</span>, ages))</span>
-<span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(adults) <span class="co"># [20, 18, 30]</span></span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a>ages <span class="op">=</span> [<span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">18</span>, <span class="dv">12</span>, <span class="dv">30</span>]</span>
+<span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>adults <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> a: a <span class="op">&gt;=</span> <span class="dv">18</span>, ages))</span>
+<span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(adults) <span class="co"># [20, 18, 30]</span></span></code></pre></div>
 <hr />
 <h2 id="technical-project-log-telemetry-aggregator">Technical Project:
 Log Telemetry Aggregator</h2>
 <p>Develop a utility to process a sequence of raw load balancer logs,
 extracting unique identifiers and applying transformation logic via
 functional mapping.</p>
-<div class="sourceCode" id="cb134"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================</span></span>
-<span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a><span class="co"># PROJECT: Log Telemetry Aggregator</span></span>
-<span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================</span></span>
-<span id="cb134-4"><a href="#cb134-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb134-5"><a href="#cb134-5" aria-hidden="true" tabindex="-1"></a>request_latency <span class="op">=</span> [<span class="dv">120</span>, <span class="dv">450</span>, <span class="dv">32</span>, <span class="dv">800</span>, <span class="dv">50</span>, <span class="dv">210</span>]</span>
-<span id="cb134-6"><a href="#cb134-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb134-7"><a href="#cb134-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--- Telemetry Processing Engine ---&quot;</span>)</span>
-<span id="cb134-8"><a href="#cb134-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Raw Latency Data (ms): </span><span class="sc">{</span>request_latency<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb134-9"><a href="#cb134-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb134-10"><a href="#cb134-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Functional Mapping: Convert ms to seconds</span></span>
-<span id="cb134-11"><a href="#cb134-11" aria-hidden="true" tabindex="-1"></a>latency_sec <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> ms: ms <span class="op">/</span> <span class="dv">1000</span>, request_latency))</span>
-<span id="cb134-12"><a href="#cb134-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb134-13"><a href="#cb134-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Functional Filtering: Identify high-latency events (&gt; 0.2s)</span></span>
-<span id="cb134-14"><a href="#cb134-14" aria-hidden="true" tabindex="-1"></a>alert_threshold <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> s: s <span class="op">&gt;</span> <span class="fl">0.2</span>, latency_sec))</span>
-<span id="cb134-15"><a href="#cb134-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb134-16"><a href="#cb134-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Data Formatting: Append operational units</span></span>
-<span id="cb134-17"><a href="#cb134-17" aria-hidden="true" tabindex="-1"></a>report_stream <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> s: <span class="ss">f&quot;EVENT_LATENCY: </span><span class="sc">{</span>s<span class="sc">}</span><span class="ss">s&quot;</span>, alert_threshold))</span>
-<span id="cb134-18"><a href="#cb134-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb134-19"><a href="#cb134-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Processed (Seconds): </span><span class="sc">{</span>latency_sec<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb134-20"><a href="#cb134-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Critical Events    : </span><span class="sc">{</span>alert_threshold<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-<span id="cb134-21"><a href="#cb134-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Report Stream      : </span><span class="sc">{</span>report_stream<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================</span></span>
+<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a><span class="co"># PROJECT: Log Telemetry Aggregator</span></span>
+<span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================</span></span>
+<span id="cb135-4"><a href="#cb135-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-5"><a href="#cb135-5" aria-hidden="true" tabindex="-1"></a>request_latency <span class="op">=</span> [<span class="dv">120</span>, <span class="dv">450</span>, <span class="dv">32</span>, <span class="dv">800</span>, <span class="dv">50</span>, <span class="dv">210</span>]</span>
+<span id="cb135-6"><a href="#cb135-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-7"><a href="#cb135-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--- Telemetry Processing Engine ---&quot;</span>)</span>
+<span id="cb135-8"><a href="#cb135-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Raw Latency Data (ms): </span><span class="sc">{</span>request_latency<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb135-9"><a href="#cb135-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-10"><a href="#cb135-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Functional Mapping: Convert ms to seconds</span></span>
+<span id="cb135-11"><a href="#cb135-11" aria-hidden="true" tabindex="-1"></a>latency_sec <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> ms: ms <span class="op">/</span> <span class="dv">1000</span>, request_latency))</span>
+<span id="cb135-12"><a href="#cb135-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-13"><a href="#cb135-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Functional Filtering: Identify high-latency events (&gt; 0.2s)</span></span>
+<span id="cb135-14"><a href="#cb135-14" aria-hidden="true" tabindex="-1"></a>alert_threshold <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> s: s <span class="op">&gt;</span> <span class="fl">0.2</span>, latency_sec))</span>
+<span id="cb135-15"><a href="#cb135-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-16"><a href="#cb135-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Data Formatting: Append operational units</span></span>
+<span id="cb135-17"><a href="#cb135-17" aria-hidden="true" tabindex="-1"></a>report_stream <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> s: <span class="ss">f&quot;EVENT_LATENCY: </span><span class="sc">{</span>s<span class="sc">}</span><span class="ss">s&quot;</span>, alert_threshold))</span>
+<span id="cb135-18"><a href="#cb135-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb135-19"><a href="#cb135-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Processed (Seconds): </span><span class="sc">{</span>latency_sec<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb135-20"><a href="#cb135-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Critical Events    : </span><span class="sc">{</span>alert_threshold<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb135-21"><a href="#cb135-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Report Stream      : </span><span class="sc">{</span>report_stream<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
 <pre><code>
 ***
 
@@ -5758,119 +5864,18 @@ def track_visit():
 for _ in range(5): track_visit()
 print(total_visits)</code></pre>
 <h3 id="quick-math">2. Quick Math</h3>
-<div class="sourceCode" id="cb136"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a>mult <span class="op">=</span> <span class="kw">lambda</span> a, b, c: a <span class="op">*</span> b <span class="op">*</span> c</span>
-<span id="cb136-2"><a href="#cb136-2" aria-hidden="true" tabindex="-1"></a>length <span class="op">=</span> <span class="kw">lambda</span> s: <span class="bu">len</span>(s)</span>
-<span id="cb136-3"><a href="#cb136-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mult(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>))</span>
-<span id="cb136-4"><a href="#cb136-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(length(<span class="st">&quot;Python&quot;</span>))</span></code></pre></div>
-<h3 id="email-filter">3. Email Filter</h3>
 <div class="sourceCode" id="cb137"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>emails <span class="op">=</span> [<span class="st">&quot;user@gmail.com&quot;</span>, <span class="st">&quot;admin@company.com&quot;</span>, <span class="st">&quot;test@gmail.com&quot;</span>, <span class="st">&quot;hr@company.com&quot;</span>]</span>
-<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a>company_only <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> e: <span class="st">&quot;@company.com&quot;</span> <span class="kw">in</span> e, emails))</span>
-<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(company_only)</span></code></pre></div>
-<hr />
-<hr />
-<h1 id="module-14.5-logic-consolidation-project">Module 14.5: Logic
-Consolidation Project</h1>
-<h3 id="architecting-custom-automation-workflows"><em>Architecting
-Custom Automation Workflows</em></h3>
-<p>Module 14.5 of 37</p>
-<hr />
-<h2 id="objectives-15">Objectives</h2>
-<p>Module competency requires: - Integration of Lists, Dictionaries, and
-Sets within a single logical framework. - Implementation of higher-order
-functions and modularized logic blocks. - Development of a complex
-“Real-World” automation utility. - Preparation for Object-Oriented
-Programming (OOP) architectures.</p>
-<hr />
-<h2 id="the-bridge-challenge">The “Bridge” Challenge</h2>
-<p>Before transitioning to Object-Oriented Programming (OOP), it is
-critical to master the orchestration of independent data structures. In
-professional DevOps environments, data often arrives as a series of
-complex lists or dictionaries which must be filtered, transformed, and
-validated using custom functions.</p>
-<h3 id="the-problem-multi-component-health-audit">The Problem:
-Multi-Component Health Audit</h3>
-<p>You have been tasked with building a <strong>System Health
-Dashboard</strong> script. The script must process raw telemetry data
-from multiple servers, filter out irrelevant status codes, and generate
-a unique list of unhealthy nodes.</p>
-<hr />
-<h2 id="data-structure-consolidation-map">Data Structure Consolidation
-Map</h2>
-<figure>
-<img src="images/python-data-types.png"
-alt="Python Data Structure Selection Guide � When to use Lists, Tuples, Dictionaries, and Sets" />
-<figcaption aria-hidden="true">Python Data Structure Selection Guide �
-When to use Lists, Tuples, Dictionaries, and Sets</figcaption>
-</figure>
-<h3 id="the-raw-telemetry-dictionary">1. The Raw Telemetry
-(Dictionary)</h3>
-<p>Each entry in your telemetry source is a dictionary representing a
-server node.</p>
-<h3 id="the-filter-criteria-set">2. The Filter Criteria (Set)</h3>
-<p>Use a Set to maintain a high-performance collection of “Known
-Critical” error codes.</p>
-<h3 id="the-result-set-list">3. The Result Set (List)</h3>
-<p>A list will store the final objects (Filtered Dictionaries) to be
-reported to the dashboard.</p>
-<hr />
-<h2 id="technical-project-automated-node-audit-utility">technical
-Project: Automated Node Audit Utility</h2>
-<p>Develop a script that integrates all concepts from Modules 01-14.</p>
+class="sourceCode python"><code class="sourceCode python"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>mult <span class="op">=</span> <span class="kw">lambda</span> a, b, c: a <span class="op">*</span> b <span class="op">*</span> c</span>
+<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a>length <span class="op">=</span> <span class="kw">lambda</span> s: <span class="bu">len</span>(s)</span>
+<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mult(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>))</span>
+<span id="cb137-4"><a href="#cb137-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(length(<span class="st">&quot;Python&quot;</span>))</span></code></pre></div>
+<h3 id="email-filter">3. Email Filter</h3>
 <div class="sourceCode" id="cb138"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================</span></span>
-<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a><span class="co"># PROJECT: Automated Node Audit Utility (Logic Consolidation)</span></span>
-<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================</span></span>
-<span id="cb138-4"><a href="#cb138-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-5"><a href="#cb138-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Configuration (Set for fast lookups)</span></span>
-<span id="cb138-6"><a href="#cb138-6" aria-hidden="true" tabindex="-1"></a>CRITICAL_ERRORS <span class="op">=</span> {<span class="st">&quot;E-101&quot;</span>, <span class="st">&quot;E-404&quot;</span>, <span class="st">&quot;E-500&quot;</span>}</span>
-<span id="cb138-7"><a href="#cb138-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-8"><a href="#cb138-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Raw Telemetry Data (List of Dictionaries)</span></span>
-<span id="cb138-9"><a href="#cb138-9" aria-hidden="true" tabindex="-1"></a>raw_telemetry <span class="op">=</span> [</span>
-<span id="cb138-10"><a href="#cb138-10" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;node&quot;</span>: <span class="st">&quot;Web-01&quot;</span>, <span class="st">&quot;cpu&quot;</span>: <span class="dv">45</span>, <span class="st">&quot;status&quot;</span>: <span class="st">&quot;E-101&quot;</span>},</span>
-<span id="cb138-11"><a href="#cb138-11" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;node&quot;</span>: <span class="st">&quot;DB-01&quot;</span>,  <span class="st">&quot;cpu&quot;</span>: <span class="dv">88</span>, <span class="st">&quot;status&quot;</span>: <span class="st">&quot;OK&quot;</span>},</span>
-<span id="cb138-12"><a href="#cb138-12" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;node&quot;</span>: <span class="st">&quot;API-01&quot;</span>, <span class="st">&quot;cpu&quot;</span>: <span class="dv">12</span>, <span class="st">&quot;status&quot;</span>: <span class="st">&quot;E-500&quot;</span>},</span>
-<span id="cb138-13"><a href="#cb138-13" aria-hidden="true" tabindex="-1"></a>    {<span class="st">&quot;node&quot;</span>: <span class="st">&quot;Cache-01&quot;</span>, <span class="st">&quot;cpu&quot;</span>: <span class="dv">10</span>, <span class="st">&quot;status&quot;</span>: <span class="st">&quot;E-202&quot;</span>},</span>
-<span id="cb138-14"><a href="#cb138-14" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb138-15"><a href="#cb138-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-16"><a href="#cb138-16" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> audit_node(node_data):</span>
-<span id="cb138-17"><a href="#cb138-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb138-18"><a href="#cb138-18" aria-hidden="true" tabindex="-1"></a><span class="co">    Evaluates a single node&#39;s data.</span></span>
-<span id="cb138-19"><a href="#cb138-19" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns True if the node is in CRITICAL failure state.</span></span>
-<span id="cb138-20"><a href="#cb138-20" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb138-21"><a href="#cb138-21" aria-hidden="true" tabindex="-1"></a>    status <span class="op">=</span> node_data.get(<span class="st">&quot;status&quot;</span>)</span>
-<span id="cb138-22"><a href="#cb138-22" aria-hidden="true" tabindex="-1"></a>    cpu_load <span class="op">=</span> node_data.get(<span class="st">&quot;cpu&quot;</span>, <span class="dv">0</span>)</span>
-<span id="cb138-23"><a href="#cb138-23" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb138-24"><a href="#cb138-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Logic: Higher than 80% CPU OR has a critical error code</span></span>
-<span id="cb138-25"><a href="#cb138-25" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> status <span class="kw">in</span> CRITICAL_ERRORS <span class="kw">or</span> cpu_load <span class="op">&gt;</span> <span class="dv">80</span>:</span>
-<span id="cb138-26"><a href="#cb138-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb138-27"><a href="#cb138-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb138-28"><a href="#cb138-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-29"><a href="#cb138-29" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_report(telemetry):</span>
-<span id="cb138-30"><a href="#cb138-30" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
-<span id="cb138-31"><a href="#cb138-31" aria-hidden="true" tabindex="-1"></a><span class="co">    Orchestrates the audit across all nodes.</span></span>
-<span id="cb138-32"><a href="#cb138-32" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb138-33"><a href="#cb138-33" aria-hidden="true" tabindex="-1"></a>    unhealthy_nodes <span class="op">=</span> [node[<span class="st">&quot;node&quot;</span>] <span class="cf">for</span> node <span class="kw">in</span> telemetry <span class="cf">if</span> audit_node(node)]</span>
-<span id="cb138-34"><a href="#cb138-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> unhealthy_nodes</span>
-<span id="cb138-35"><a href="#cb138-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-36"><a href="#cb138-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Main Execution</span></span>
-<span id="cb138-37"><a href="#cb138-37" aria-hidden="true" tabindex="-1"></a>failed_nodes <span class="op">=</span> generate_report(raw_telemetry)</span>
-<span id="cb138-38"><a href="#cb138-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb138-39"><a href="#cb138-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--- SYSTEM HEALTH REPORT ---&quot;</span>)</span>
-<span id="cb138-40"><a href="#cb138-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Nodes found requiring intervention: </span><span class="sc">{</span>failed_nodes<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+class="sourceCode python"><code class="sourceCode python"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>emails <span class="op">=</span> [<span class="st">&quot;user@gmail.com&quot;</span>, <span class="st">&quot;admin@company.com&quot;</span>, <span class="st">&quot;test@gmail.com&quot;</span>, <span class="st">&quot;hr@company.com&quot;</span>]</span>
+<span id="cb138-2"><a href="#cb138-2" aria-hidden="true" tabindex="-1"></a>company_only <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> e: <span class="st">&quot;@company.com&quot;</span> <span class="kw">in</span> e, emails))</span>
+<span id="cb138-3"><a href="#cb138-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(company_only)</span></code></pre></div>
 <hr />
-<h2 id="operational-insight-3">Operational Insight</h2>
-<blockquote>
-<p>“In the real world, you don’t just write scripts; you architect
-workflows. This project forces you to think about how data flows from a
-raw ‘telemetry’ list into a filtered ‘critical’ set and finally into an
-‘actionable’ report. Mastering this functional orchestration is the
-final step before we move into the structural power of Classes and
-Objects.”</p>
-</blockquote>
 <hr />
-<p><strong>Next: Module 15 � Classes &amp; Objects</strong></p>
 <h1 id="module-15-classes-objects">Module 15: Classes &amp; Objects</h1>
 <h3
 id="object-oriented-programming-oop-and-logical-resource-modeling"><em>Object-Oriented
@@ -8757,6 +8762,8 @@ Continuous automation ensures operational resilience. Forward focused.
 
 
 
+
+
 # Module 27: Infrastructure as Code (Fabric &amp; Ansible)
 ### *Programmatic Configuration Management and Fleet Orchestration*
 
@@ -10321,6 +10328,8 @@ Operational excellence is achieved through the elimination of manual, non-repeat
 
 
 
+
+
 # Module 33: GitOps &amp; Multi-Platform Version Control
 ### *Automating GitHub and GitLab Workflows with Python*
 
@@ -10339,7 +10348,7 @@ Infrastructure as Code (IaC) and GitOps rely on Git as the &quot;Single Source o
 
 ![GitOps Orchestration Flow — Technical visualization of GitHub and GitLab automation engine](images/gitops_orchestration_flow.png)
 
-***
+---
 
 ## Programmatic Git Management (The GitOps Engine)
 In a modern enterprise, managing hundreds of repositories manually is impossible. Python acts as the orchestration layer, interacting with Git providers through their REST and GraphQL APIs.
@@ -10458,13 +10467,13 @@ prints their “Last Activity” date.</p>
 <hr />
 <h2 id="knowledge-assessment-28">Knowledge Assessment</h2>
 <p><strong>Q1. What is the primary Python library for the GitHub REST
-API v3?</strong> - A) git-python - B) PyGithub - C) github-sdk - D)
+API v3-</strong> - A) git-python - B) PyGithub - C) github-sdk - D)
 requests-git</p>
 <p><strong>Q2. In <code>python-gitlab</code>, what is the correct term
-for a Repository?</strong> - A) Repo - B) Repository - C) Project - D)
+for a Repository-</strong> - A) Repo - B) Repository - C) Project - D)
 Container</p>
 <p><strong>Q3. Why is programmatic Git management essential for SRE
-roles?</strong> - A) To avoid using the command line - B) To automate
+roles-</strong> - A) To avoid using the command line - B) To automate
 compliance, auditing, and metadata management of 100+ repos - C) Because
 APIs are faster than Git clone - D) To replace Git entirely</p>
 <hr />
@@ -10480,7 +10489,7 @@ threshold, the script would call the <code>.delete()</code> method on
 the branch reference, ensuring a clean repository state without manual
 intervention.</p>
 <p><strong>Q2: “What are the security considerations when using Python
-to manage enterprise repositories?”</strong> <strong>Ideal
+to manage enterprise repositories—</strong> <strong>Ideal
 Answer</strong>: Security is paramount. 1) <strong>Token
 Scoping</strong>: Personal Access Tokens (PATs) should be scoped to the
 minimum permissions required (Least Privilege). 2) <strong>Secret
@@ -10519,8 +10528,8 @@ Generation</h2>
 (<code>.tf.json</code>). This allows Python to easily generate
 infrastructure blueprints using the standard <code>json</code> library,
 bypassing the need for complex string parsing of HCL.</p>
-<h3 id="why-generate-terraform-with-python">Why Generate Terraform with
-Python?</h3>
+<h3 id="why-generate-terraform-with-python-">Why Generate Terraform with
+Python-</h3>
 <ol type="1">
 <li><strong>Bulk Creation</strong>: Generating 100s of resources from a
 CSV/Excel source.</li>
@@ -10648,15 +10657,15 @@ every <code>id</code> and <code>arn</code> for resources of type
 <hr />
 <h2 id="knowledge-assessment-29">Knowledge Assessment</h2>
 <p><strong>Q1. What file extension does Terraform allow for JSON-based
-infrastructure definition?</strong> - A) .tfjson - B) .tf.json - C)
+infrastructure definition-</strong> - A) .tfjson - B) .tf.json - C)
 .json.tf - D) .terraform.json</p>
 <p><strong>Q2. Why is Python’s <code>json</code> library often used
-alongside Terraform?</strong> - A) Terraform only understands JSON - B)
+alongside Terraform-</strong> - A) Terraform only understands JSON - B)
 To run Terraform on Linux - C) To programmatically generate
 infrastructure Blueprints without string manipulation - D) To speed up
 AWS login</p>
 <p><strong>Q3. What is the role of the <code>python-terraform</code>
-library?</strong> - A) To rewrite Terraform in Python - B) To execute
+library-</strong> - A) To rewrite Terraform in Python - B) To execute
 Terraform commands (init/plan/apply) from a Python script - C) To
 install AWS CLI - D) To replace AWS SDK</p>
 <hr />
@@ -10674,7 +10683,7 @@ dictionary representing the infrastructure blueprint. Using the
 <code>tf.apply(auto_approve=True)</code>, ensuring the AWS environment
 always converges to the state defined in the database.</p>
 <p><strong>Q2: “What is the advantage of <code>.tf.json</code> over
-traditional HCL strings for automation developers?”</strong>
+traditional HCL strings for automation developers—</strong>
 <strong>Ideal Answer</strong>: Traditional HCL requires complex string
 templating (e.g., using Jinja2) and is prone to syntax errors or missing
 braces. <code>.tf.json</code> is native JSON, making it “data-first.”
@@ -10821,14 +10830,14 @@ it does, print all keys inside that ConfigMap.</p>
 <hr />
 <h2 id="knowledge-assessment-30">Knowledge Assessment</h2>
 <p><strong>Q1. Which library is the official way to interact with
-Kubernetes from Python?</strong> - A) k8s-python - B) kubernetes (pip
+Kubernetes from Python-</strong> - A) k8s-python - B) kubernetes (pip
 install kubernetes) - C) python-kubectl - D) kube-client</p>
 <p><strong>Q2. What is the CoreV1Api used for in the Kubernetes Python
-client?</strong> - A) Managing low-level objects like Pods, Nodes, and
+client-</strong> - A) Managing low-level objects like Pods, Nodes, and
 Services - B) Managing Deployments and ReplicaSets - C) Controlling the
 AWS EKS console - D) Running Docker commands</p>
 <p><strong>Q3. How does the library typically authenticate with an EKS
-cluster on a developer machine?</strong> - A) With your AWS username and
+cluster on a developer machine-</strong> - A) With your AWS username and
 password - B) By loading the local <code>~/.kube/config</code> file
 (kubeconfig) - C) By asking the user for a token every time - D) It
 doesn’t; it only works from inside the cluster</p>
@@ -10837,7 +10846,7 @@ doesn’t; it only works from inside the cluster</p>
 Preparation</h2>
 <p><strong>Q1: “Scenario: A deployment is stuck in a Pending state due
 to resource lack. How would you automate the detection of this via
-Python?”</strong> <strong>Ideal Answer</strong>: I would use a
+Python—</strong> <strong>Ideal Answer</strong>: I would use a
 <code>watch.Watch()</code> loop on the
 <code>v1.list_namespaced_pod</code> method. I would monitor events for
 Pods where the <code>status.phase</code> is <code>Pending</code>. Within
@@ -10847,7 +10856,7 @@ could trigger an AWS API call to scale the EKS Node Group (using Boto3)
 or alert the SRE team via a Slack webhook.</p>
 <p><strong>Q2: “What is the benefit of using Python for cluster
 management instead of just running Shell scripts with
-<code>kubectl</code>?”</strong> <strong>Ideal Answer</strong>: While
+<code>kubectl</code>—</strong> <strong>Ideal Answer</strong>: While
 <code>kubectl</code> is powerful, shell scripts are difficult to
 maintain and scale for complex logic. Python provides proper
 <strong>Exception Handling</strong>, <strong>Object-Oriented
@@ -10906,8 +10915,8 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb251-1"><a 
 <span id="cb251-2"><a href="#cb251-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb251-3"><a href="#cb251-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Common patterns for secrets (Example: AWS Access Keys)</span></span>
 <span id="cb251-4"><a href="#cb251-4" aria-hidden="true" tabindex="-1"></a>SECRET_PATTERNS <span class="op">=</span> {</span>
-<span id="cb251-5"><a href="#cb251-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;AWS_ACCESS_KEY&quot;</span>: <span class="vs">r&quot;</span><span class="fu">(?i)</span><span class="vs">AKIA</span><span class="pp">[0-9A-Z]</span><span class="op">{16}</span><span class="vs">&quot;</span>,</span>
-<span id="cb251-6"><a href="#cb251-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;GENERIC_PASSWORD&quot;</span>: <span class="vs">r&quot;</span><span class="fu">(?i)</span><span class="vs">password</span><span class="dv">\s</span><span class="op">*</span><span class="pp">[:=]</span><span class="dv">\s</span><span class="op">*</span><span class="pp">[&#39;</span><span class="ch">\&quot;</span><span class="pp">][^&#39;</span><span class="ch">\&quot;</span><span class="pp">]</span><span class="op">+</span><span class="pp">[&#39;</span><span class="ch">\&quot;</span><span class="pp">]</span><span class="vs">&quot;</span></span>
+<span id="cb251-5"><a href="#cb251-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;AWS_ACCESS_KEY&quot;</span>: <span class="vs">r&quot;</span><span class="kw">(</span><span class="vs">-i</span><span class="kw">)</span><span class="vs">AKIA</span><span class="pp">[0-9A-Z]</span><span class="op">{16}</span><span class="vs">&quot;</span>,</span>
+<span id="cb251-6"><a href="#cb251-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;GENERIC_PASSWORD&quot;</span>: <span class="vs">r&quot;</span><span class="kw">(</span><span class="vs">-i</span><span class="kw">)</span><span class="vs">password</span><span class="dv">\s</span><span class="op">*</span><span class="pp">[:=]</span><span class="dv">\s</span><span class="op">*</span><span class="pp">[&#39;</span><span class="ch">\&quot;</span><span class="pp">][^&#39;</span><span class="ch">\&quot;</span><span class="pp">]</span><span class="op">+</span><span class="pp">[&#39;</span><span class="ch">\&quot;</span><span class="pp">]</span><span class="vs">&quot;</span></span>
 <span id="cb251-7"><a href="#cb251-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb251-8"><a href="#cb251-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb251-9"><a href="#cb251-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> scan_file(file_path):</span>
@@ -11001,15 +11010,15 @@ the last time each key was updated.</p>
 <hr />
 <h2 id="knowledge-assessment-31">Knowledge Assessment</h2>
 <p><strong>Q1. What does “Shift-Left” mean in the context of
-DevSecOps?</strong> - A) Moving security tests earlier in the software
+DevSecOps-</strong> - A) Moving security tests earlier in the software
 development lifecycle - B) Deleting all code on the left side of the
 screen - C) Running security checks only in Production - D) Ignoring
 security until the build is complete</p>
 <p><strong>Q2. Which library is the industry standard for Python
-interaction with HashiCorp Vault?</strong> - A) vault-py - B) hvac - C)
+interaction with HashiCorp Vault-</strong> - A) vault-py - B) hvac - C)
 pyvault - D) hashicorp-sdk</p>
 <p><strong>Q3. Why are Regular Expressions (re) used in security
-automation?</strong> - A) To make code run faster - B) To encrypt files
+automation-</strong> - A) To make code run faster - B) To encrypt files
 - C) To identify specific patterns (entropy) that represent secrets,
 keys, or passwords - D) To replace passwords entirely</p>
 <hr />
@@ -11025,7 +11034,7 @@ a temporary token or use a managed identity. This identity would then
 call an API like HashiCorp Vault to retrieve the credentials in memory
 only, ensuring they are never written to disk.</p>
 <p><strong>Q2: “How would you integrate a Python security scanner into a
-Jenkins or GitHub Actions pipeline?”</strong> <strong>Ideal
+Jenkins or GitHub Actions pipeline—</strong> <strong>Ideal
 Answer</strong>: I would wrap the Python scanner in a CLI-style
 interface. The pipeline would invoke the script as a build step
 (<code>python scanner.py --dir ./src</code>). If the script detects any
@@ -11509,22 +11518,146 @@ procedures.</li>
         });
     </script>
 
+    <style>
+        /* Chatbot Theme-Aware Styles */
+        #chat-container {
+            --chat-bg: rgba(255, 255, 255, 0.95);
+            --chat-text: #1e293b;
+            --chat-bot-msg-bg: rgba(0, 0, 0, 0.05);
+            --chat-border: rgba(15, 39, 68, 0.1);
+            --chat-input-bg: #ffffff;
+            
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            width: 340px;
+            height: 480px;
+            background: var(--chat-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--chat-border);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            z-index: 10000;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .dark-mode #chat-container {
+            --chat-bg: #1e293b;
+            --chat-text: #f1f5f9;
+            --chat-bot-msg-bg: rgba(255, 255, 255, 0.1);
+            --chat-border: #334155;
+            --chat-input-bg: #0f172a;
+        }
+
+        #chat-header {
+            background: var(--header-blue);
+            color: white;
+            padding: 18px;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            letter-spacing: 0.5px;
+        }
+
+        #chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--chat-text);
+        }
+
+        .chat-msg {
+            padding: 12px 16px;
+            border-radius: 15px;
+            max-width: 85%;
+            line-height: 1.5;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .chat-msg.bot {
+            background: var(--chat-bot-msg-bg);
+            color: var(--chat-text);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .chat-msg.user {
+            background: var(--header-blue);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+            box-shadow: 0 4px 10px rgba(15, 39, 68, 0.2);
+        }
+
+        #chat-input-area {
+            padding: 20px;
+            border-top: 1px solid var(--chat-border);
+            display: flex;
+            gap: 12px;
+            background: rgba(0,0,0,0.02);
+        }
+
+        #chat-input {
+            flex: 1;
+            padding: 10px 16px;
+            border: 1px solid var(--chat-border);
+            border-radius: 25px;
+            outline: none;
+            font-size: 14px;
+            background: var(--chat-input-bg);
+            color: var(--chat-text);
+            transition: border-color 0.2s;
+        }
+
+        #chat-input:focus {
+            border-color: var(--header-blue);
+        }
+
+        .chat-send-btn {
+            background: var(--header-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.2s;
+        }
+
+        .chat-send-btn:hover { transform: scale(1.05); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
     <!-- L0 Support Chatbot UI -->
-    <div id="chat-container" style="display:none; position:fixed; bottom:90px; right:30px; width:320px; height:420px; background:rgba(255,255,255,0.9); backdrop-filter:blur(10px); border:1px solid rgba(15,39,68,0.2); border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.2); z-index:10000; flex-direction:column; overflow:hidden; font-family:'Inter', sans-serif;">
-        <div style="background:var(--header-blue); color:white; padding:15px; font-weight:600; display:flex; justify-content:space-between; align-items:center;">
+    <div id="chat-container">
+        <div id="chat-header">
             <span>Manual Assistant</span>
-            <button onclick="toggleChat()" style="background:none; border:none; color:white; cursor:pointer; font-size:20px;">&times;</button>
+            <button onclick="toggleChat()" style="background:none; border:none; color:white; cursor:pointer; font-size:22px;">&times;</button>
         </div>
-        <div id="chat-messages" style="flex:1; padding:15px; overflow-y:auto; display:flex; flex-direction:column; gap:10px; font-size:13px; color:var(--text-color);">
-            <div style="background:rgba(0,0,0,0.05); padding:10px; border-radius:10px; align-self:flex-start; max-width:85%;">Hi there! Glad to have you here. I'm your gateway to everything I've built in the world of IT and strategy. What can I highlight for you today?</div>
+        <div id="chat-messages">
+            <div class="chat-msg bot">Hi there! I'm your gateway to this Python & SRE Manual. How can I help you navigate the 37 modules today?</div>
         </div>
-        <div style="padding:15px; border-top:1px solid rgba(0,0,0,0.1); display:flex; gap:10px;">
-            <input type="text" id="chat-input" placeholder="Type a message..." style="flex:1; padding:8px 12px; border:1px solid rgba(0,0,0,0.1); border-radius:20px; outline:none; font-size:13px;">
-            <button onclick="handleChat()" style="background:var(--header-blue); color:white; border:none; padding:8px 15px; border-radius:20px; cursor:pointer; font-weight:600;">Send</button>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Ask about modules, topics..." autocomplete="off">
+            <button onclick="handleChat()" class="chat-send-btn">Send</button>
         </div>
     </div>
 
-    <button id="chat-toggle" onclick="toggleChat()" style="position:fixed; bottom:30px; right:90px; width:45px; height:45px; border-radius:50%; background:var(--header-blue); color:white; border:none; cursor:pointer; z-index:9999; display:flex; justify-content:center; align-items:center; box-shadow:0 4px 12px rgba(0,0,0,0.2); transition:transform 0.2s;">
+    <button id="chat-toggle" onclick="toggleChat()" style="position:fixed; bottom:30px; right:90px; width:50px; height:50px; border-radius:50%; background:var(--header-blue); color:white; border:none; cursor:pointer; z-index:9999; display:flex; justify-content:center; align-items:center; box-shadow:0 6px 20px rgba(0,0,0,0.25); transition:all 0.3s ease;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
         </svg>
@@ -11533,7 +11666,14 @@ procedures.</li>
     <script>
         function toggleChat() {
             const chat = document.getElementById('chat-container');
-            chat.style.display = chat.style.display === 'none' ? 'flex' : 'none';
+            const toggle = document.getElementById('chat-toggle');
+            if (chat.style.display === 'none' || chat.style.display === '') {
+                chat.style.display = 'flex';
+                toggle.style.transform = 'rotate(90deg) scale(0.9)';
+            } else {
+                chat.style.display = 'none';
+                toggle.style.transform = 'none';
+            }
         }
 
         function handleChat() {
@@ -11545,45 +11685,48 @@ procedures.</li>
             input.value = '';
             
             const response = processInput(text);
-            setTimeout(() => appendMessage('bot', response), 500);
+            setTimeout(() => appendMessage('bot', response), 400);
         }
 
         function processInput(input) {
             const val = input.toLowerCase();
+            
+            // Numerical / Count Questions
+            if (val.includes('how many') || val.includes('total') || val.includes('count')) {
+                if (val.includes('module')) {
+                    return "There are exactly <strong>37 modules</strong> in this manual, spanning from Module 0 (Environment Setup) to Module 36 (DevSecOps).";
+                }
+            }
+
             if (val.includes('python') || val.includes('manual') || val.includes('course') || val.includes('learn')) {
-                return "You can master everything from Python basics to Cloud SRE orchestration in my 37-module <a href='/python/index.html' style='color:#2e7dcc; font-weight:bold;'>Python Training Manual</a>.";
+                return "This manual covers Python Fundamentals, OOP, Cloud Automation (AWS/Azure), Docker, Kubernetes, and DevSecOps. You can find the full list in the <a href='#module-index' style='color:var(--accent-color); font-weight:bold;'>Module Index</a>.";
             }
-            if (val.includes('resume') || val.includes('cv') || val.includes('experience') || val.includes('background') || val.includes('who')) {
-                return "I am an IT Service Delivery Leader with 20+ years of experience. You can explore my full career trajectory and skills on my <a href='/index.html' style='color:#2e7dcc; font-weight:bold;'>Main Resume</a>.";
+
+            if (val.includes('author') || val.includes('who built') || val.includes('rahul') || val.includes('about')) {
+                return "This manual was authored by <strong>Rahul Nethikar</strong>, an IT Service Delivery Leader with 20+ years of experience in Global IT Operations and Automation.";
             }
-            if (val.includes('contact') || val.includes('help') || val.includes('hire') || val.includes('reach') || val.includes('form')) {
-                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-                return "I've scrolled you to the bottom for context. To send me a direct message, please use the contact form on my main resume site!";
+
+            if (val.includes('resume') || val.includes('cv') || val.includes('experience')) {
+                return "Rahul's full professional background is available on his <a href='/index.html' style='color:var(--accent-color); font-weight:bold;'>Web Resume</a>.";
             }
-            if (val.includes('website') || val.includes('built') || val.includes('project')) {
-                return "This platform showcases my journey in IT automation and SRE. It includes my professional resume and a deep-dive Python manual. Which part would you like to explore?";
+
+            if (val.includes('cloud') || val.includes('aws') || val.includes('azure') || val.includes('boto3')) {
+                return "Cloud automation is covered in depth starting from <strong>Module 23</strong>. We cover Boto3, Azure SDK, and Cost Management.";
             }
-            return "I'm always learning new ways to assist! If I couldn't find what you were looking for, feel free to drop me a message on the main site—I'd love to chat more.";
+
+            if (val.includes('contact') || val.includes('help') || val.includes('hire') || val.includes('reach')) {
+                const contactSection = document.querySelector('.contact-section');
+                if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
+                return "I've scrolled you to the contact form. Feel free to reach out to Rahul directly!";
+            }
+
+            return "That's a great question! While I'm still learning the specifics, you can likely find the answer in the <strong>Module Index</strong> or by reaching out via the contact form below.";
         }
 
         function appendMessage(sender, text) {
             const msgArea = document.getElementById('chat-messages');
             const msg = document.createElement('div');
-            msg.style.padding = '10px';
-            msg.style.borderRadius = '10px';
-            msg.style.maxWidth = '85%';
-            msg.style.fontSize = '13px';
-            
-            if (sender === 'user') {
-                msg.style.background = 'var(--header-blue)';
-                msg.style.color = 'white';
-                msg.style.alignSelf = 'flex-end';
-            } else {
-                msg.style.background = 'rgba(0,0,0,0.05)';
-                msg.style.color = 'var(--text-color)';
-                msg.style.alignSelf = 'flex-start';
-            }
-            
+            msg.className = 'chat-msg ' + sender;
             msg.innerHTML = text;
             msgArea.appendChild(msg);
             msgArea.scrollTop = msgArea.scrollHeight;
