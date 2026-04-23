@@ -1,6 +1,0 @@
-Script_ID,Name,Version,Python_Module_Ref,Security_SignOff,Prod_Status
-SCR-001,log_auditor.py,1.2.0,Module_24,YES,Production
-SCR-002,disk_cleanup.sh,2.1.0,N/A,YES,Production
-SCR-003,iam_reconcile.py,0.9.5,Module_36,PENDING,Testing
-SCR-004,backup_validator.py,1.0.1,Module_20,YES,Production
-SCR-005,cloud_tagger.py,1.1.0,Module_23,YES,Staging
